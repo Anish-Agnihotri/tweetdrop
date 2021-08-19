@@ -1,0 +1,38 @@
+{
+  "name": "tweetdrop",
+  "version": "1.0.0",
+  "description": "Generate dispersable airdrops from Twitter threads",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
+  },
+  "keywords": [
+    "tweet",
+    "airdrop",
+    "crypto",
+    "ethereum"
+  ],
+  "author": "Anish Agnihotri",
+  "license": "GPLv3",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "ethers": "^5.4.5",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^16.6.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
+  }
+}

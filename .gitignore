@@ -1,0 +1,11 @@
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Outputted addreses
+output/
+
+# Env
+.env
