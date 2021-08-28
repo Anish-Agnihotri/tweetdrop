@@ -7,7 +7,7 @@ Produces batches of text files containing 100 addresses (one-per-line) per-file 
 ## Requirements
 
 1. Twitter API V2 access (easy to apply for at [developer.twitter.com](https://developer.twitter.com)). You will need a V2 API Bearer Token.
-2. Conversation ID for thread you'd like to scrape. This is the number after `/status/` in a tweets direct URL. For example, `1428089265641201665` for punk4156s tweet (`https://twitter.com/punk4156/status/1428089265641201665`).
+2. Conversation ID for thread you'd like to scrape. This is the number after `/status/` in a tweets direct URL. For example, `1428089265641201665` for punk4156s tweet (`https://twitter.com/punk4156/status/1428089265641201665`). Because of Twitter API limitations, the thread must be less than 7 days old.
 3. Optional: If you'd like to resolve ENS names to addresses (necessary for Disperse), an Ethereum RPC url.
 
 ## Steps
