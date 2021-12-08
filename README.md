@@ -23,3 +23,31 @@ npm install
 # 3. Run script
 npm run start
 ```
+
+# Extras
+
+## Most recent followers
+
+Inspired by [Cole's](https://twitter.com/ColeThereum/status/1468221153344954369?s=20) tweet, Tweetdrop supports scraping your latest `X` followers.
+
+**Limitations:**
+
+- Really, none, beyond Twitter imposed timeouts (max: 30,000 followers / 15 minutes). By default, script pulls 15,000 newest followers at once.
+
+**Steps:**
+
+```bash
+# 1. Update only TWITTER_BEARER and TWITTER_USER (handle)
+cp .env.sample .env
+
+# 2. Install dependencies
+npm install
+
+# 3. Run followers script
+npm run followers
+```
+
+**Outputs:**
+
+- `follower-ids.json`: List of all follower ids
+- `follower-details.json`: List of follower details (beyond just id: `name`, `handle`, `description`, `followers_count`, `following_count`, `verified`, `created_at`)

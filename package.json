@@ -5,7 +5,8 @@
   "main": "dist/app.js",
   "scripts": {
     "start": "ts-node src/app.ts",
-    "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "followers": "ts-node src/extra/followers.ts"
   },
   "keywords": [
     "tweet",
