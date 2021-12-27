@@ -176,7 +176,7 @@ export default class Scraper {
   const twitterBearer: string | undefined = process.env.TWITTER_BEARER;
   const twitterHandle: string | undefined = process.env.TWITTER_USER;
 
-  // If no twitter bearer or twitter hnalde provided
+  // If no twitter bearer or twitter handle provided
   if (!twitterBearer || !twitterHandle) {
     // Throw error and exit
     logger.error("Missing required parameters, update .env");
