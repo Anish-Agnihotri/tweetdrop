@@ -1,11 +1,11 @@
 import * as fs from "fs"; // Filesystem
 import axios from "axios"; // Requests
 import { logger } from "./logger"; // Logging
-import { providers } from "ethers"; // RPC for ENS names
+import { ethers, providers } from "ethers"; // Ethers
 
 // Regex matches for addresses and ENS names
 const addressRegex: RegExp = /(0x[a-zA-Z0-9])\w+/;
-const ENSRegex: RegExp = /([a-zA-Z0-9]\w+.(eth|ETH))/;
+const ENSRegex: RegExp = /([^ ]+\.(eth))/i;
 
 export default class Scraper {
   // Optional RPC to resolve ENS names to addresses
@@ -117,6 +117,25 @@ export default class Scraper {
   }
 
   /**
+   * Checks if an address is valid
+   * @param {string} address to check
+   * @returns {{valid: boolean, address: string}} returns validity and checksum address
+   */
+  isValidAddress(address: string): { valid: boolean; address: string } {
+    // Setup address
+    let addr: string = address;
+
+    try {
+      // Return valid and address if success
+      addr = ethers.utils.getAddress(address);
+      return { valid: true, address: addr };
+    } catch {
+      // Else, if error
+      return { valid: false, address };
+    }
+  }
+
+  /**
    * Convert ENS names to addresses
    */
   async convertENS(): Promise<void> {
@@ -135,8 +154,13 @@ export default class Scraper {
           convertedAddresses.push(parsed);
         }
       } else {
-        // Else, push just address
-        convertedAddresses.push(address);
+        // Else, check if valid address
+        const { valid, address: addr } = this.isValidAddress(address);
+        // If address is valid
+        if (valid) {
+          // Push checksummed address
+          convertedAddresses.push(addr);
+        }
       }
     }
 
