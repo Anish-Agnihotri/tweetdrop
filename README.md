@@ -24,6 +24,10 @@ npm install
 npm run start
 ```
 
+## Credits
+
+- [@iainnash](https://github.com/iainnash) for [address parsing fixes](https://github.com/Anish-Agnihotri/tweetdrop/issues/1)
+
 # Extras
 
 ## Most recent followers
